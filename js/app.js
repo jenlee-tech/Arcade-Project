@@ -2,6 +2,7 @@
 var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
+    //adding changes
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
