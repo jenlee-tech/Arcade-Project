@@ -26,6 +26,17 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
+//**creating the Survivor class and stating initial position */
+class Survivor {
+            constructor(){
+                this.x = 0;
+                this.y = 0;
+                this.sprite = 'images/char-pink-girl.png';
+
+            }
+}
+
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
