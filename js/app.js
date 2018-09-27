@@ -27,20 +27,27 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 
 //**creating the Survivor class and stating initial position */
-class Survivor {
-            constructor(){
-                this.x = 0;
-                this.y = 0;
-                this.sprite = 'images/char-pink-girl.png';
-
-            }
-}
-
-
+class Hero {
+    constructor() {
+        this.x = 200;
+        this.y = 420;
+        this.sprite = 'images/char-pink-girl.png';
+        }
+            //**Draw the Survivor/player on the board - similar to Enemy method*/
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        }
+    }
 
 // Now instantiate your objects.
+const player = new Hero();
+
+
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+
+
+
 
 const allEnemies = [];
 
