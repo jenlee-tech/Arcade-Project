@@ -26,35 +26,46 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-//**creating the Survivor class and stating initial position */
+//**creating the Survivor class and stating initial position @ 200, 410 */
 class Survivor {
     constructor() {
         this.x = 200;
-        this.y = 420;
+        this.y = 410;
         this.sprite = 'images/char-pink-girl.png';
+        this.horizontalMove = 101;
+        this.verticalMove = 83;
         }
-    //**Draw the Survivor/player on the board - similar to Enemy method*/
+    //**Draw the Survivor/player on the board - similar to Enemy method - render method*/
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
         }
 
-    //**this handles the movement of the Survivor*/    
+    //**this handles the movement of the Survivor - handleInput method*/
+    //**this also restricts the movement of the Survivor on the board*/    
     handleInput(input){
         switch(input) {
             case 'left':
-            this.x -= 20;
+                if (this.x > 0) {
+                    this.x -= this.horizontalMove;
+                };
             break;
 
             case 'up':
-            this.y -= 20;
+                if (this.y > 0){
+                    this.y -= this.verticalMove;
+                };
             break;
 
             case 'right':
-            this.x += 20;
+                if (this.x < this.horizontalMove * 3) {
+                    this.x += this.horizontalMove;
+                }
             break;
 
             case 'down':
-            this.y += 20;
+                if (this.y < this.verticalMove * 4) {
+                    this.y += this.verticalMove;
+                }
             break;
         }
     }
