@@ -1,16 +1,18 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     //adding changes
-
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
+
     this.x = 0;
-    this.y = 60;
+    this.y = y + 55;
+    this.speed = speed;
+    this.sprite = 'images/enemy-bug.png';
     this.horizontalMove = 101;
     this.offCanvas = this.horizontalMove *5;
+    
 };
 
 // Update the enemy's position, required method for game
@@ -21,7 +23,7 @@ Enemy.prototype.update = function(dt) {
     // all computers.
     //** this makes the bug move across the screen*/
     if (this.x < this.offCanvas) {
-        this.x += 200 * dt;
+        this.x += this.speed * dt;
     }
     else { //**this part makes bug re-appear on screen */
         this.x=0;
@@ -88,11 +90,15 @@ class Survivor {
 // Place the player object in a variable called player
 //**this insatiates the player base off the Survivor class */
 const player = new Survivor();
-const bugOne = new Enemy();
-
-// Place all enemy objects in an array called allEnemies
+const bugOne = new Enemy(-101, 0, 200);
+const bugTwo = new Enemy(-101, 83, 300);
+const bugThree = new Enemy((-101*2.5), 83, 100);
+const bugFour = new Enemy(-101, 175, 150);
 const allEnemies = [];
-allEnemies.push(bugOne);
+// Place all enemy objects in an array called allEnemies
+
+allEnemies.push(bugOne, bugTwo, bugThree, bugFour);
+console.log(allEnemies);
 
 
 
