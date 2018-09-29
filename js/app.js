@@ -42,11 +42,14 @@ Enemy.prototype.render = function() {
 //**creating the Survivor class and stating initial position @ 200, 410 */
 class Survivor {
     constructor() {
-        this.x = 200;
-        this.y = 410;
         this.sprite = 'images/char-pink-girl.png';
         this.horizontalMove = 101;
         this.verticalMove = 83;
+        this.initX = this.horizontalMove * 2; //**initialized the x position of Survivor */
+        this.initY = (this.verticalMove * 4)  + 55; //**initialized the Y position of Survivor */
+        this.x = this.initX;
+        this.y = this.initY;
+            
         }
     //**Draw the Survivor/player on the board - similar to Enemy method - render method*/
     render() {
@@ -82,23 +85,32 @@ class Survivor {
             break;
         }
     }
+//**update method */
+    update() {
+        for(let enemy of allEnemies) {
+         
+            if (this.y === enemy.y && (enemy.x + enemy.horizontalMove > this.x && enemy.x < this.x + this.horizontalMove)) {
+                console.log("collusion!");
+            }
+           
+           //** console.log(this.y, enemy.y)*/
+        }
+    }
 }
-
-
 // Now instantiate your objects.
 
 // Place the player object in a variable called player
 //**this insatiates the player base off the Survivor class */
 const player = new Survivor();
-const bugOne = new Enemy(-101, 0, 200);
+const bugOne = new Enemy(-101, 0, 50);
 const bugTwo = new Enemy(-101, 83, 300);
-const bugThree = new Enemy((-101*2.5), 83, 100);
-const bugFour = new Enemy(-101, 175, 150);
+const bugThree = new Enemy((-101*2), 83, 100);
+const bugFour = new Enemy(-101, 166, 150);
 const allEnemies = [];
 // Place all enemy objects in an array called allEnemies
 
 allEnemies.push(bugOne, bugTwo, bugThree, bugFour);
-console.log(allEnemies);
+//**console.log(allEnemies);
 
 
 
