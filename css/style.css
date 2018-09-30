@@ -1,3 +1,52 @@
 body {
     text-align: center;
 }
+
+
+/*Styles for Modal*/
+#modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 150%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+}
+
+.modal-content {
+    position: relative;
+    background: #FFFF;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%, -70%);
+    box-shadow: -11px -7px 28px -3px rgba(0,0,0,0.75);
+}
+
+
+.modal_heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right:20px;
+    padding-left: 150px;
+    border-bottom: 1px solid #17afd4;
+}
+
+
+.modal_buttons {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.modal_button {
+    width: 60px;
+    height: 30px;
+    align-items: center;
+}
+

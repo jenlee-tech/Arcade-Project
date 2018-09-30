@@ -22,11 +22,16 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime;
+        lastTime,
+        moreFrames; //**variable for replaying frames */
 
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
+//**selecting the Modal element and replay elements */
+    const modalMessage = document.querySelector('.modal_message');
+    const modalButton = document.querySelector('.modal_replay');
+
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
@@ -55,7 +60,13 @@ var Engine = (function(global) {
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
-        win.requestAnimationFrame(main);
+        if (player.win === true) {
+            console.log("Game is done");
+            win.cancelAnimationFrame(moreFrames);
+        }
+        else {
+            moreFrames = win.requestAnimationFrame(main);
+        }
     }
 
     /* This function does some initial setup that should only occur once,

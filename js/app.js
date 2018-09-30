@@ -39,7 +39,7 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-//**creating the Survivor class and stating initial position @ 200, 410 */
+//**creating the Survivor class and stating initial position  */
 class Survivor {
     constructor() {
         this.sprite = 'images/char-pink-girl.png';
@@ -49,7 +49,7 @@ class Survivor {
         this.initY = (this.verticalMove * 4)  + 55; //**initialized the Y position of Survivor */
         this.x = this.initX;
         this.y = this.initY;
-            
+        this.win = false;    
         }
     //**Draw the Survivor/player on the board - similar to Enemy method - render method*/
     render() {
@@ -73,7 +73,7 @@ class Survivor {
             break;
 
             case 'right':
-                if (this.x < this.horizontalMove * 3) {
+                if (this.x < this.horizontalMove * 4) {
                     this.x += this.horizontalMove;
                 }
             break;
@@ -89,12 +89,24 @@ class Survivor {
     update() {
         for(let enemy of allEnemies) {
          
-            if (this.y === enemy.y && (enemy.x + enemy.horizontalMove > this.x && enemy.x < this.x + this.horizontalMove)) {
-                console.log("collusion!");
-            }
-           
-           //** console.log(this.y, enemy.y)*/
+            if (this.y === enemy.y &&  //**the Survivor's y axis is equal to the enemy's y axis?*/ 
+                ( (enemy.x + enemy.horizontalMove/2) > this.x) && //**the sum of the enemy's x axis and 101 - is more than survivor's x axis?*/
+                (enemy.x < (this.x + this.horizontalMove/2) ) //**the enemy's x axis is less than the sum of the Survivor's x axis and 101? */
+                ) {
+                this.reset();
+                }
+                
         }
+        if (this.y === 55) {
+            //**alert("you won the game!!!");
+            this.win = true;
+            document.getElementById("modal").style.display = "block";
+        }
+    }
+    reset() { //**reset the Survivor back on the initial points. */
+        alert("You got caught by a bug - you gotta go back")
+        this.y = this.initY;
+        this.x = this.initX;
     }
 }
 // Now instantiate your objects.
@@ -103,7 +115,7 @@ class Survivor {
 //**this insatiates the player base off the Survivor class */
 const player = new Survivor();
 const bugOne = new Enemy(-101, 0, 50);
-const bugTwo = new Enemy(-101, 83, 300);
+const bugTwo = new Enemy(-101, 83, 200);
 const bugThree = new Enemy((-101*2), 83, 100);
 const bugFour = new Enemy(-101, 166, 150);
 const allEnemies = [];
