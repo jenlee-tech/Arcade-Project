@@ -27,10 +27,23 @@ var Engine = (function(global) {
         cancelButton = document.querySelector('.modal_cancel');
         cancelButton.addEventListener('click', player.closeModal);
 
+        replayButton = document.querySelector('.modal_replay');
+        replayButton.addEventListener('click', replayGame);
+
+    
+
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
+
 //**selecting the Modal element and replay elements */
+
+    function replayGame() {
+        player.closeModal();
+        player.reset();
+        player.win = false;
+        win.requestAnimationFrame(main);
+    }
    
 
     /* This function serves as the kickoff point for the game loop itself
@@ -61,9 +74,9 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
         if (player.win === true) {
-            console.log("Game is done");
-            win.cancelAnimationFrame(moreFrames);
-            //**player.showModal();*/
+            //**console.log("Game is done");
+           win.cancelAnimationFrame(moreFrames);
+           //**player.showModal();*/
         }
         else {
             moreFrames = win.requestAnimationFrame(main);

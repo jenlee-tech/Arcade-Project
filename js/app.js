@@ -93,6 +93,7 @@ class Survivor {
                 ( (enemy.x + enemy.horizontalMove/2) > this.x) && //**the sum of the enemy's x axis and 101 - is more than survivor's x axis?*/
                 (enemy.x < (this.x + this.horizontalMove/2) ) //**the enemy's x axis is less than the sum of the Survivor's x axis and 101? */
                 ) {
+                alert("You got caught by a bug - you gotta go back")
                 this.reset();
                 }
                 
@@ -100,7 +101,7 @@ class Survivor {
         if (this.y < 70) {
             //**alert("you won the game!!!");
             this.win = true;
-            document.getElementById("modal").style.display = "block";
+            this.showModal();
         }
     }
     //**modal shows and closes by changing the style*/
@@ -113,7 +114,6 @@ class Survivor {
     }
 
     reset() { //**reset the Survivor back on the initial points. */
-        alert("You got caught by a bug - you gotta go back")
         this.y = this.initY;
         this.x = this.initX;
     }
