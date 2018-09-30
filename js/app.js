@@ -7,7 +7,7 @@ var Enemy = function(x, y, speed) {
     // a helper we've provided to easily load images
 
     this.x = 0;
-    this.y = y + 55;
+    this.y = y + 70;
     this.speed = speed;
     this.sprite = 'images/enemy-bug.png';
     this.horizontalMove = 101;
@@ -46,7 +46,7 @@ class Survivor {
         this.horizontalMove = 101;
         this.verticalMove = 83;
         this.initX = this.horizontalMove * 2; //**initialized the x position of Survivor */
-        this.initY = (this.verticalMove * 4)  + 55; //**initialized the Y position of Survivor */
+        this.initY = (this.verticalMove * 4)  + 70; //**initialized the Y position of Survivor */
         this.x = this.initX;
         this.y = this.initY;
         this.win = false;    
@@ -97,7 +97,7 @@ class Survivor {
                 }
                 
         }
-        if (this.y === 55) {
+        if (this.y < 70) {
             //**alert("you won the game!!!");
             this.win = true;
             document.getElementById("modal").style.display = "block";
