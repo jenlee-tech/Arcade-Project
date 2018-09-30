@@ -25,6 +25,7 @@ var Engine = (function(global) {
         lastTime,
         moreFrames; //**variable for replaying frames */
         cancelButton = document.querySelector('.modal_cancel');
+        cancelButton.addEventListener('click', player.closeModal);
 
     canvas.width = 505;
     canvas.height = 606;
@@ -62,7 +63,7 @@ var Engine = (function(global) {
         if (player.win === true) {
             console.log("Game is done");
             win.cancelAnimationFrame(moreFrames);
-            player.showModal();
+            //**player.showModal();*/
         }
         else {
             moreFrames = win.requestAnimationFrame(main);
