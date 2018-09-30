@@ -103,6 +103,11 @@ class Survivor {
             document.getElementById("modal").style.display = "block";
         }
     }
+    //**when the survivor wins, modal shows by changing the style*/
+    showModal() {
+        document.getElementById("modal").style.display = "block";
+    }
+
     reset() { //**reset the Survivor back on the initial points. */
         alert("You got caught by a bug - you gotta go back")
         this.y = this.initY;
@@ -143,7 +148,3 @@ document.addEventListener('keyup', function(e) {
 
 
 
-/*this function shows the modal by modifying the style*/
-function showModal(){
-    document.getElementById("modal").style.display = "block";
-}
