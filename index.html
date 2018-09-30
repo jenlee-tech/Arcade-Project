@@ -8,16 +8,27 @@
 
 
 <body>
-    <div id = "modal">
-        <div class = "modal-content">
-                <div class = "modal_heading">
-                "You won the game!!!"
-                </div>
-                <button class="modal_button">Replay</button>
+        <div id = "modal">
+                <div class = "modal-content">
+                    <div class = "modal_heading">
+                        <h2 class="modal_title">You won the game!</h2>
+                        <!--<span class = "closeBtn">&times;</span>-->
+                        
+                    </div>
+                    <div class="modal_stats">
+                            <span class="modal_time"></span>
+                            <span class="modal_stars"></span>
+                            <span class="modal_moves"></span>
+                            
+                    </div>
+                    <div class = "modal_buttons">
+                        <button class="modal_button modal_replay">Replay</button>
+                        <button class="modal_button modal_cancel">Cancel</button>
+                    </div>
                 
-        </div>
-            
-    </div>
+                    
+                </div>
+            </div>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>

@@ -139,3 +139,11 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+
+
+/*this function shows the modal by modifying the style*/
+function showModal(){
+    document.getElementById("modal").style.display = "block";
+}
