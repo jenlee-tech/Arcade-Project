@@ -103,9 +103,13 @@ class Survivor {
             document.getElementById("modal").style.display = "block";
         }
     }
-    //**when the survivor wins, modal shows by changing the style*/
+    //**modal shows and closes by changing the style*/
     showModal() {
         document.getElementById("modal").style.display = "block";
+    }
+
+    closeModal() {
+        document.getElementById("modal").style.display = "none";
     }
 
     reset() { //**reset the Survivor back on the initial points. */
