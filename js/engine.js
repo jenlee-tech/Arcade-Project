@@ -21,7 +21,7 @@ var Engine = (function(global) {
     var doc = global.document,
         win = global.window,
         canvas = doc.createElement('canvas'),
-        ctx = canvas.getContext('2d'),
+        ctx = canvas.getContext('2d'), 
         lastTime,
         moreFrames; //**variable for replaying frames */
         cancelButton = document.querySelector('.modal_cancel');
