@@ -93,8 +93,8 @@ class Survivor {
                 ( (enemy.x + enemy.horizontalMove/2) > this.x) && //**the sum of the enemy's x axis and 101 - is more than survivor's x axis?*/
                 (enemy.x < (this.x + this.horizontalMove/2) ) //**the enemy's x axis is less than the sum of the Survivor's x axis and 101? */
                 ) {
-                alert("You got caught by a bug - you gotta go back")
-                this.reset();
+               alert("You bumped into a bug, you have to start again");
+               this.reset();
                 }
                 
         }

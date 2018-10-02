@@ -22,66 +22,57 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'), 
-        lastTime,
-        moreFrames; //**variable for replaying frames */
-        cancelButton = document.querySelector('.modal_cancel');
-        cancelButton.addEventListener('click', player.closeModal);
-
+        lastTime, //**needed for smooth animation */
+        //**variable for replaying frames */
+        moreFrames; 
+        
+        //**variables and queryselectors for modal */
         replayButton = document.querySelector('.modal_replay');
         replayButton.addEventListener('click', replayGame);
-
         modalTitle = document.querySelector('.modal_title');
-        
         starShow = document.querySelector('.modal_stars')
         starSymbol = '<li><i class="fa fa-star"></i></li>';
+        
+      
+        //**layout for the canvas */
+        canvas.width = 505;
+        canvas.height = 606;
+        doc.body.appendChild(canvas);
 
-    
-
-    canvas.width = 505;
-    canvas.height = 606;
-    doc.body.appendChild(canvas);
-
-//**selecting the Modal element and replay elements */
-
-    function replayGame() {
-        player.closeModal();
-        player.reset();
-        player.win = false;
-        win.requestAnimationFrame(main);
-    }
+        //**this function replays the game  */
+        function replayGame() {
+            player.closeModal();
+            player.reset();
+            player.win = false;
+            starShow.innerHTML = "";
+            modalTitle.innerText = "";
+            win.requestAnimationFrame(main);
+        }
    
 
     /* This function serves as the kickoff point for the game loop itself
-     * and handles properly calling the update and render methods.
+     * and handles properly calling the update and render methods. Provided by Udacity
      */
     function main() {
         /* Get our time delta information which is required if your game
-         * requires smooth animation. Because everyone's computer processes
-         * instructions at different speeds we need a constant value that
-         * would be the same for everyone (regardless of how fast their
-         * computer is) - hurray time!
+         * requires smooth animation. Provided by Udacity
          */
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
 
         /* Call our update/render functions, pass along the time delta to
-         * our update function since it may be used for smooth animation.
+         * our update function since it may be used for smooth animation.  Provided by Udacity
          */
         update(dt);
         render();
-
-        /* Set our lastTime variable which is used to determine the time delta
-         * for the next time this function is called.
-         */
         lastTime = now;
 
         /* Use the browser's requestAnimationFrame function to call this
-         * function again as soon as the browser is able to draw another frame.
+         * function again as soon as the browser is able to draw another frame.  Provided by Udacity
          */
-        if (player.win === true) {
-            //**console.log("Game is done");
-           win.cancelAnimationFrame(moreFrames);
-           //**player.showModal();*/
+        if (player.win === true) { 
+            //**when the player wins, it stops the frames */
+              win.cancelAnimationFrame(moreFrames);
         }
         else {
             moreFrames = win.requestAnimationFrame(main);

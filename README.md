@@ -3,7 +3,7 @@
 This game is base on the classic [Frogger](https://en.wikipedia.org/wiki/Frogger) game in which a player (which I call Survivor in my Arcade game) tries to reach the river without colliding into nasty bugs.  
 
 ## How to play:
-The game starts once the webpage opens.  In order to move your Survivor, you will need a keyboard with directional keys to move around the board to avoid the bugs.  The goal of the game is to reach the river without bumping into the bugs.
+The game starts once the webpage opens.  You will see bugs move across the screen at different rates in different rows. In order to move your Survivor, you will need a keyboard with arrow keys to move around the board to avoid the bugs.  The goal of the game is to reach the river without bumping into the bugs.
 
 
 ## Prerequisites/Dependencies:
