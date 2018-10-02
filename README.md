@@ -17,7 +17,9 @@ The game starts once the webpage opens.  You will see bugs move across the scree
 ## Acknowledgements and resources:
 I want to thank the following people\organizations that provided concepts and insights in helping me complete the Arcade Game project:
 
-* [@Rodrick[FEND]](https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000) - Zoom video on the Arcade Game Project:
+* [@Rodrick[FEND]](https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000) - Zoom video on the Arcade Game Project
+
+* A free Udemy course titled, ["Code Your First Game: Arcade Classic in JavaScript on Canvas,"](https://www.udemy.com/code-your-first-game/) by Chris DeLeon - this course helped me have an overview on how you could create an "animated effect" on a webpage.
 
 * [Phillip Mouris](https://www.youtube.com/watch?v=kD2-GOZLW88&index=2&list=PLdUdGSe4kmWbEQDQ2g8A0zPx1EM9DJZpp) - JS File Explanations
 
