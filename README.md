@@ -5,7 +5,7 @@ This game is base on the classic [Frogger](https://en.wikipedia.org/wiki/Frogger
 
 
 ## How to play:
-You could click here to [play](https://jenlee-tech.github.io/Arcade-Project/)[newtab].  
+You could click here to [play](https://jenlee-tech.github.io/Arcade-Project/){:target="_blank"}.  
 
 or 
 
