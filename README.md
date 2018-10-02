@@ -33,11 +33,11 @@ I want to thank the following people\organizations that provided concepts and in
 
 * [Phillip Mouris](https://www.youtube.com/watch?v=kD2-GOZLW88&index=2&list=PLdUdGSe4kmWbEQDQ2g8A0zPx1EM9DJZpp) - JS File Explanations
 
-* [Matthew Cranford](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/) - on the Arcade Game WalkThrough
+* [Matthew Cranford](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/) - tutorial on the Arcade Game WalkThrough
 
 * [Brad Traversy](https://www.youtube.com/watch?v=6ophW7Ask_0&t=1191s) - Traversy Media - concepts on how to make a basic modal:
 
-* Aracely[FEND] - she encouraged me to just keep persevering through the project.
+* Aracely[FEND], Linda Zanchi(from FEND track), Lloan alas(from FEND track)- they encouraged me to just keep persevering through the project.
 
 * Markdown cheat sheet from [Github:](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
