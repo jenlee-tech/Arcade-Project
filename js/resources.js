@@ -1,4 +1,4 @@
-/* Resources.js - all comments from this page is provided by Udacity
+/* Resources.js - all comments and code on this file is provided by Udacity
  * This is simply an image loading utility. It eases the process of loading
  * image files so that they can be used within your game. It also includes
  * a simple "caching" layer so it will reuse cached images if you attempt

@@ -21,7 +21,7 @@ I want to thank the following people\organizations that provided concepts and in
 
 * [Phillip Mouris](https://www.youtube.com/watch?v=kD2-GOZLW88&index=2&list=PLdUdGSe4kmWbEQDQ2g8A0zPx1EM9DJZpp) - JS File Explanations
 
-* [Matthew Cranford](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/) - on the Arcade Game WalkThrough:
+* [Matthew Cranford](https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/) - on the Arcade Game WalkThrough
 
 * [Brad Traversy](https://www.youtube.com/watch?v=6ophW7Ask_0&t=1191s) - Traversy Media - concepts on how to make a basic modal:
 
@@ -38,11 +38,11 @@ I want to thank the following people\organizations that provided concepts and in
 * Project Grading Rubric
 
 ## Further comments:
-This project was actually fun!  It helped me understand Object-Orientated Programming more and how this concept works and how it is implemented.
+This project was actually fun!  It helped me better understand Object-orientated programming in Javascript.  
 
 ## License:
 * [License:](https://fontawesome.com/license) for Font Awesome
 
 * [License:](https://fonts.google.com/attribution) for Google Fonts
 
-* _This project was built on perserverance and exteme amounts of coffee._  :coffee: Copyright &copy; 2018 Jennifer Lee
+* _This project was built on perserverance and lots of coffee._  :coffee: Copyright &copy; 2018 Jennifer Lee

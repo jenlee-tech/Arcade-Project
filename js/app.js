@@ -1,11 +1,5 @@
-// Enemies our player must avoid
+// Enemy class (constructor)
 var Enemy = function(x, y, speed) {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-    //adding changes
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-
     this.x = 0;
     this.y = y + 70;
     this.speed = speed;
@@ -15,14 +9,10 @@ var Enemy = function(x, y, speed) {
     
 };
 
-// Update the enemy's position, required method for game
+// this updates the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-    //** this makes the bug move across the screen*/
-    if (this.x < this.offCanvas) {
+       if (this.x < this.offCanvas) {
         this.x += this.speed * dt;
     }
     else { //**this part makes bug re-appear on screen */
@@ -35,11 +25,7 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
-//**creating the Survivor class and stating initial position  */
+//**Survivor class (or others may call it a player class) */
 class Survivor {
     constructor() {
         this.sprite = 'images/char-pink-girl.png';
@@ -56,8 +42,8 @@ class Survivor {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
         }
 
-    //**this handles the movement of the Survivor - handleInput method*/
-    //**this also restricts the movement of the Survivor on the board*/    
+//**this handles the movement of the Survivor - handleInput method*/
+//**this also restricts the movement of the Survivor on the board*/    
     handleInput(input){
         switch(input) {
             case 'left':
@@ -85,19 +71,23 @@ class Survivor {
             break;
         }
     }
-//**update method */
+/*this is the update method 
+*it test the following conditions: 
+*the Survivor's y axis is equal to the enemy's y axis. vertical plane
+*the enemy's x axis is less than the sum of the Survivor's x axis and 101. horizontal plane
+*the sum of the enemy's x axis and 101 - is more than survivor's x axis. horizontal plane
+*fine tune horizontal plane conditions by dividing it by 2*/
     update() {
         for(let enemy of allEnemies) {
          
-            if (this.y === enemy.y &&  //**the Survivor's y axis is equal to the enemy's y axis?*/ 
-                ( (enemy.x + enemy.horizontalMove/2) > this.x) && //**the sum of the enemy's x axis and 101 - is more than survivor's x axis?*/
-                (enemy.x < (this.x + this.horizontalMove/2) ) //**the enemy's x axis is less than the sum of the Survivor's x axis and 101? */
+            if (this.y === enemy.y &&  
+                ( (enemy.x + enemy.horizontalMove/2) > this.x) && 
+                (enemy.x < (this.x + this.horizontalMove/2) ) 
                 ) {
                alert("You bumped into a bug, you have to start again");
                this.reset();
                 }
-                
-        }
+            }
         if (this.y < 70) {
             this.win = true;
             modalTitle.innerText = "You won the game!";
@@ -105,7 +95,7 @@ class Survivor {
             this.showModal();
         }
     }
-    //**modal shows and closes by changing the style*/
+//**Modal shows and closes by changing the style*/
     showModal() {
         document.getElementById("modal").style.display = "block";
     }
@@ -114,31 +104,28 @@ class Survivor {
         document.getElementById("modal").style.display = "none";
     }
 
-    reset() { //**reset the Survivor back on the initial points. */
+//**Resets the Survivor back on the initial points*/
+    reset() { 
         this.y = this.initY;
         this.x = this.initX;
     }
 }
-// Now instantiate your objects.
+//**Above this line, Survivor and Enemy classes are established*/
 
-// Place the player object in a variable called player
-//**this insatiates the player base off the Survivor class */
+//**Objects instantiated */ 
 const player = new Survivor();
 const bugOne = new Enemy(-101, 0, 50);
 const bugTwo = new Enemy(-101, 83, 200);
 const bugThree = new Enemy((-101*2), 83, 100);
 const bugFour = new Enemy(-101, 166, 150);
+
+//**All enemy objects in an array called allEnemies*/
 const allEnemies = [];
-// Place all enemy objects in an array called allEnemies
-
 allEnemies.push(bugOne, bugTwo, bugThree, bugFour);
-//**console.log(allEnemies);
-
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
+//Provided by Udacity
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -149,7 +136,3 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
-
-
-

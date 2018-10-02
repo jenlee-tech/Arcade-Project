@@ -1,4 +1,5 @@
 /* Engine.js
+ * this comment is provided by Udacity
  * This file provides the game loop functionality (update entities and render),
  * draws the initial game board on the screen, and then calls the update and
  * render methods on your player and enemy objects (defined in your app.js).
@@ -14,32 +15,31 @@
  */
 
 var Engine = (function(global) {
-    /* Predefine the variables we'll be using within this scope,
-     * create the canvas element, grab the 2D context for that canvas
-     * set the canvas elements height/width and add it to the DOM.
-     */
+    /**Variables for the scope, to create a canvas element and its
+    2D context.  Canvas was set with height and width and added to the DOM */
+    
     var doc = global.document,
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'), 
-        lastTime, //**needed for smooth animation */
-        //**variable for replaying frames */
-        moreFrames; 
+        lastTime, //**needed for smooth animation*/
+        moreFrames;  //**variable for replaying frames*/
+
+       //**setting the height and width of the canvas*/
+        canvas.width = 505;
+        canvas.height = 606;
+        doc.body.appendChild(canvas);
+
         
-        //**variables and queryselectors for modal */
+        //**variables and queryselectors for modal*/
         replayButton = document.querySelector('.modal_replay');
         replayButton.addEventListener('click', replayGame);
         modalTitle = document.querySelector('.modal_title');
         starShow = document.querySelector('.modal_stars')
         starSymbol = '<li><i class="fa fa-star"></i></li>';
-        
-      
-        //**layout for the canvas */
-        canvas.width = 505;
-        canvas.height = 606;
-        doc.body.appendChild(canvas);
+                       
 
-        //**this function replays the game  */
+        //**this function replays the game*/
         function replayGame() {
             player.closeModal();
             player.reset();
@@ -68,11 +68,11 @@ var Engine = (function(global) {
         lastTime = now;
 
         /* Use the browser's requestAnimationFrame function to call this
-         * function again as soon as the browser is able to draw another frame.  Provided by Udacity
+         * function again as soon as the browser is able to draw another frame.  
          */
         if (player.win === true) { 
             //**when the player wins, it stops the frames */
-              win.cancelAnimationFrame(moreFrames);
+            win.cancelAnimationFrame(moreFrames);
         }
         else {
             moreFrames = win.requestAnimationFrame(main);
@@ -81,10 +81,10 @@ var Engine = (function(global) {
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
-     * game loop.
+     * game loop.  Provided by Udacity
      */
     function init() {
-        reset();
+        player.reset();
         lastTime = Date.now();
         main();
     }
@@ -96,11 +96,10 @@ var Engine = (function(global) {
      * the need to add an additional function call here. For now, we've left
      * it commented out - you may or may not want to implement this
      * functionality this way (you could just implement collision detection
-     * on the entities themselves within your app.js file).
+     * on the entities themselves within your app.js file).  Provided by Udacity
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -108,21 +107,20 @@ var Engine = (function(global) {
      * their update() methods. It will then call the update function for your
      * player object. These update methods should focus purely on updating
      * the data/properties related to the object. Do your drawing in your
-     * render methods.
+     * render methods.  Provided by Udacity
      */
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
            enemy.update(dt);
         });
         player.update();
-        //**player.render();
     }
 
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
      * game tick (or loop of the game engine) because that's how games work -
      * they are flipbooks creating the illusion of animation but in reality
-     * they are just drawing the entire screen over and over.
+     * they are just drawing the entire screen over and over.  Provided by Udacity
      */
     function render() {
         /* This array holds the relative URL to the image used
@@ -149,7 +147,7 @@ var Engine = (function(global) {
          */
         for (row = 0; row < numRows; row++) {
             for (col = 0; col < numCols; col++) {
-                /* The drawImage function of the canvas' context element
+                /* Udacity comment: The drawImage function of the canvas' context element
                  * requires 3 parameters: the image to draw, the x coordinate
                  * to start drawing and the y coordinate to start drawing.
                  * We're using our Resources helpers to refer to our images
@@ -159,13 +157,12 @@ var Engine = (function(global) {
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
             }
         }
-
         renderEntities();
     }
 
     /* This function is called by the render function and is called on each game
      * tick. Its purpose is to then call the render functions you have defined
-     * on your enemy and player entities within app.js
+     * on your enemy and player entities within app.js  Provided by Udacity
      */
     function renderEntities() {
         /* Loop through all of the objects within the allEnemies array and call
@@ -174,22 +171,10 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
-
         player.render();
     }
 
-    /* This function does nothing but it could have been a good place to
-     * handle game reset states - maybe a new game menu or a game over screen
-     * those sorts of things. It's only called once by the init() method.
-     */
-    function reset() {
-        // noop
-    }
-
-    /* Go ahead and load all of the images we know we're going to need to
-     * draw our game level. Then set init as the callback method, so that when
-     * all of these images are properly loaded our game will start.
-     */
+    /* Resources.load - basic functionailty is provided by Udacity - I added char-pink-girl*/
 
      /**characters and images that are loaded */
     Resources.load([
