@@ -30,6 +30,11 @@ var Engine = (function(global) {
         replayButton = document.querySelector('.modal_replay');
         replayButton.addEventListener('click', replayGame);
 
+        modalTitle = document.querySelector('.modal_title');
+        
+        starShow = document.querySelector('.modal_stars')
+        starSymbol = '<li><i class="fa fa-star"></i></li>';
+
     
 
     canvas.width = 505;

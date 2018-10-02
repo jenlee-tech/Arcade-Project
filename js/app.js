@@ -99,8 +99,9 @@ class Survivor {
                 
         }
         if (this.y < 70) {
-            //**alert("you won the game!!!");
             this.win = true;
+            modalTitle.innerText = "You won the game!";
+            starShow.innerHTML = starSymbol + starSymbol + starSymbol;
             this.showModal();
         }
     }
