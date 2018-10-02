@@ -5,7 +5,13 @@ This game is base on the classic [Frogger](https://en.wikipedia.org/wiki/Frogger
 
 
 ## How to play:
-The game starts once the webpage opens.  You will see bugs move across the screen at different rates in different rows. In order to move your Survivor, you will need a keyboard with arrow keys to move around the board to avoid the bugs.  The goal of the game is to reach the river without bumping into the bugs.
+You could click here to [play](https://jenlee-tech.github.io/Aracade-project/index.html).  
+
+or 
+
+You could download this repository by clicking the above button that states, "Clone or Download."  You will choose either Download Zip or Open in Desktop.  Put the files in one folder and open index.html in a modern day web browser. 
+
+The game starts once the webpage opens (index.html) in the browser.  You will see bugs move across the screen at different rates in different rows. In order to move your Survivor, you will need a keyboard with arrow keys to move around the board to avoid the bugs.  The goal of the game is to reach the river without bumping into the bugs.
 
 
 ## Prerequisites/Dependencies:
@@ -14,6 +20,8 @@ The game starts once the webpage opens.  You will see bugs move across the scree
 * A keyboard with arrow keys (up, down, right and left).
 
 * Your nostalgia for childhood games.  :stuck_out_tongue_winking_eye:
+
+
 
 
 ## Acknowledgements and resources:
