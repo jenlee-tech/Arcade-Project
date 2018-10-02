@@ -2,6 +2,8 @@
 
 This game is base on the classic [Frogger](https://en.wikipedia.org/wiki/Frogger) game in which a player (which I call Survivor in my Arcade game) tries to reach the river without colliding into nasty bugs.  
 
+
+
 ## How to play:
 The game starts once the webpage opens.  You will see bugs move across the screen at different rates in different rows. In order to move your Survivor, you will need a keyboard with arrow keys to move around the board to avoid the bugs.  The goal of the game is to reach the river without bumping into the bugs.
 
@@ -33,14 +35,16 @@ I want to thank the following people\organizations that provided concepts and in
 
 * [Emoji cheat sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/) for Markdown files
 
-* This repository contains starter code from [Udacity's Classic Arcade Game Project](https://github.com/udacity/frontend-nanodegree-arcade-game)
+* This repository contains starter code and comments from [Udacity's Classic Arcade Game Project](https://github.com/udacity/frontend-nanodegree-arcade-game)
 
 * Udacity's Front End Nanodegree [Style Guides](https://github.com/udacity/frontend-nanodegree-styleguide)
 
 * Project Grading Rubric
 
+
 ## Further comments:
 This project was actually fun!  It helped me better understand Object-orientated programming in Javascript.  
+
 
 ## License:
 * [License:](https://fontawesome.com/license) for Font Awesome
